@@ -18,7 +18,7 @@ CLASS_NAMES = ['Basophil', 'Eosinophil', 'Lymphocytes', 'Monocytes', 'Neutrophil
 # 3. App Header
 st.title("Blood Cell Cancer Detection")
 st.markdown("""
-Upload a microscopic image of blood cells to analyze for potential leukemia indicators.
+Upload a microscopic image of blood cells to analyze for potential cancer indicators.
 This model uses a **VGG-19** architecture to classify images into four categories.
 """)
 
