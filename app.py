@@ -10,6 +10,8 @@ def load_model():
     model = tf.keras.models.load_model('blood_cancer_model.h5')
     return model
 
+import os
+st.write("Files in current directory:", os.listdir("."))
 model = load_model()
 
 # labels
