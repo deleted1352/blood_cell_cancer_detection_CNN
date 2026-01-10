@@ -51,13 +51,15 @@ if uploaded_file is not None:
         
         score = tf.nn.softmax(predictions[0])
         
+        chart_data = dict(zip(CLASS_NAMES, score))
+
         result = CLASS_NAMES[np.argmax(score)]
         confidence = 100 * np.max(score)
+        
+        st.success(f"Primary Prediction: **{result}** ({confidence:.2f}%)")
 
-        # display
-        st.info(f"The AI identifies this cell as: **{result}**")
-        st.write(f"**Confidence Level:** {confidence:.2f}%")
-        st.progress(confidence / 100)
+        st.write("### Class Confidence Breakdown")
+        st.bar_chart(chart_data)
 
 # medical ai disclaimer
 st.info("**Disclaimer:** This tool is for educational/research purposes only. It is not a substitute for professional medical diagnosis.")
