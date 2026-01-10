@@ -49,7 +49,7 @@ if uploaded_file is not None:
 
         predictions = model.predict(img_array)
         
-        score = tf.nn.softmax(predictions[0])
+        score = score = predictions[0]
         
         chart_data = dict(zip(CLASS_NAMES, score))
 
