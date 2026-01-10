@@ -50,12 +50,9 @@ if uploaded_file is not None:
         confidence = 100 * np.max(score)
 
         # display
-        if "Malignant" in result:
-            st.error(f"Prediction: **{result}**")
-        else:
-            st.success(f"Prediction: **{result}**")
-            
+        st.info(f"The AI identifies this cell as: **{result}**")
         st.write(f"**Confidence Level:** {confidence:.2f}%")
+        st.progress(confidence / 100)
 
 # medical ai disclaimer
 st.info("**Disclaimer:** This tool is for educational/research purposes only. It is not a substitute for professional medical diagnosis.")
