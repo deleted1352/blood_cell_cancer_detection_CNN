@@ -53,6 +53,8 @@ if uploaded_file is not None:
         ################
 
         predictions = model.predict(img_array)
+        st.write("Raw Model Prediction Array:")
+        st.write(predictions[0])
         
         score = score = predictions[0]
         
