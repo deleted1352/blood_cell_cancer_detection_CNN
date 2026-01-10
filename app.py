@@ -47,6 +47,11 @@ if uploaded_file is not None:
 
         img_array = preprocess_input(img_array)
 
+        ################
+        st.write(f"Input shape: {img_array.shape}") # Should be (1, 244, 244, 3)
+        st.write(f"Value range: {np.min(img_array)} to {np.max(img_array)}")
+        ################
+
         predictions = model.predict(img_array)
         
         score = score = predictions[0]
