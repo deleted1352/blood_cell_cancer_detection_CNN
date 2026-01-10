@@ -2,6 +2,7 @@ import streamlit as st
 import tensorflow as tf
 import numpy as np
 from PIL import Image
+from tensorflow.keras.applications.vgg19 import preprocess_input
 
 st.set_page_config(page_title="Blood Cancer Detector", page_icon="🩸")
 
@@ -36,16 +37,18 @@ if uploaded_file is not None:
     
     with st.spinner('Analyzing'):
         img = image.resize((224, 224))
-        img_array = np.array(img) / 255.0
         
-        if img_array.shape[-1] != 3:
+        if img.mode != 'RGB':
             img = img.convert('RGB')
-            img_array = np.array(img) / 255.0
             
+        img_array = np.array(img)
+        
         img_array = np.expand_dims(img_array, axis=0)
 
-        # prediction
+        img_array = preprocess_input(img_array)
+
         predictions = model.predict(img_array)
+        
         score = tf.nn.softmax(predictions[0])
         
         result = CLASS_NAMES[np.argmax(score)]
