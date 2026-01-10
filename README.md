@@ -46,3 +46,9 @@ Utilized **ImageDataGenerator** for real-time data augmentation and handled meta
 
 **Solution**: WIP.
 
+
+
+Contact: ethanshenchen@gmail.com
+
+GitHub: deleted1352
+
