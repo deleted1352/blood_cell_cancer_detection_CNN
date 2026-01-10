@@ -36,7 +36,7 @@ if uploaded_file is not None:
     st.write("### Analysis Result")
     
     with st.spinner('Analyzing'):
-        img = image.resize((224, 224))
+        img = image.resize((244, 244))
         
         if img.mode != 'RGB':
             img = img.convert('RGB')
