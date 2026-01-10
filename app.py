@@ -7,7 +7,7 @@ st.set_page_config(page_title="Blood Cancer Detector", page_icon="🩸")
 
 @st.cache_resource
 def load_model():
-    model = tf.keras.models.load_model('blood_cancer_model.h5')
+    model = tf.keras.models.load_model('blood_cancer_model.h5', compile=False)
     return model
 
 import os
