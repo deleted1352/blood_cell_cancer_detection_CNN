@@ -2,7 +2,7 @@ import streamlit as st
 import tensorflow as tf
 import numpy as np
 from PIL import Image
-from tensorflow.keras.applications.vgg19 import preprocess_input
+from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 
 st.set_page_config(page_title="Blood Cancer Detector", page_icon="🩸")
 
