@@ -26,6 +26,14 @@ Utilized **ImageDataGenerator** for real-time data augmentation and handled meta
 
 
 
+![alt text](https://github.com/deleted1352/blood_cell_cancer_detection_CNN/blob/main/assets/training_epochs.png "Training Session (Epochs)")
+
+Performance Metrix: By the 10th epoch, the model achieved a training accuracy of **88.77%** and a validation accuracy of **87.93%**
+
+![alt text](https://github.com/deleted1352/blood_cell_cancer_detection_CNN/blob/main/assets/confusion_matrix.png "Confusion Matrix")
+
+Evaluated model performance using Seaborn-generated confusion matrices, successfully identifying over 7,500 true positives for the primary class.
+
 ###### Engineering Challenges \& Solutions
 
 
