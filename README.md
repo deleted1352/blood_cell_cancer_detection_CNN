@@ -31,19 +31,16 @@ Utilized **ImageDataGenerator** for real-time data augmentation and handled meta
 
 
 **Challenge:** Initial predictions in production were inconsistent despite high training accuracy. 
-
 **Solution**: Identified a mismatch in pixel scaling. While standard VGG models often use 0-1 normalization, this pipeline was trained using **MobileNetV2** **preprocessing**, which scales inputs to a \[-1, 1] range. Aligning the Streamlit inference math to this specific function resolved the distribution shift.
 
 
 
 **Challenge:** Encountered **ValueError** regarding incompatible layer shapes during deployment.
-
 **Solution**: Debugged the tensor flow to find that while the data generator was set to **244 x 244**, the VGG architecture was strictly compiled for **224 x 224**. Standardized the entire pipeline to **224 x 224** to maintain architectural integrity.
 
 
 
 **Challenge**: Confident but incorrect classifications (e.g. Neutrophils identified as Basophils).
-
 **Solution**: WIP.
 
 
